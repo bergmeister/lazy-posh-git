@@ -2,7 +2,7 @@
 
 ## Summary
 
-PowerShell proxy command around [Set-Location](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-location) and therefore its built-in aliases `cd`, `chdir` and `sl` to defer import of [posh-git](https://github.com/dahlbyk/posh-git) module until one changes working directory to a git directory. This is useful to speed up PowerShell startup time to not having to import `posh-git` module itself in the profile.
+PowerShell proxy command around [Set-Location](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-location) and therefore its built-in aliases `cd`, `chdir` and `sl` to defer import of [posh-git](https://github.com/dahlbyk/posh-git) module until one changes working directory to the root of a git directory. This is useful to speed up PowerShell startup time to not having to import `posh-git` module itself in the profile.
 
 ## Usage
 
