@@ -30,7 +30,7 @@ CompanyName = 'Unknown'
 Copyright = '(c) Christoph Bergmeister. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'Proxy command around Set-Location and its aliases to defer import of posh-git until one is in a git directory.'
 
 # Minimum version of the PowerShell engine required by this module
  PowerShellVersion = '7.0'
