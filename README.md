@@ -22,7 +22,7 @@ Only once you navigate to a git directory, the `posh-git` module will be importe
 
 ## Support
 
-Currently, this early version only supports PowerShell 7.
+Currently, this early version only supports PowerShell 7.0 and later. If you need support for PowerShell 5.1, please open an issue or open a pull request.
 
 ## How was it built and how does it work
 
@@ -36,8 +36,7 @@ $metaData = New-Object System.Management.Automation.CommandMetaData(Get-Command 
 This command is then wrapped in a function as `function{ }` and the following code added at the end of the `end` block of it:
 
 ```powershell
-        if (Test-Path (Join-Path $PWD.Path '.git')) {
-            Import-Module posh-git
-        }
+if (Test-Path (Join-Path $PWD.Path '.git')) {
+    Import-Module posh-git
+}
 ```
-
