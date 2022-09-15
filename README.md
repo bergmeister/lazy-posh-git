@@ -9,7 +9,7 @@ PowerShell proxy command around [Set-Location](https://docs.microsoft.com/powers
 Install the module from the [PowerShell Gallery](https://www.powershellgallery.com/packages/lazy-posh-git/):
 
 ```powershell
-Install-Module -Name 'lazy-posh-git -AllowClobber'
+Install-Module -Name 'lazy-posh-git' -AllowClobber
 ```
 
 Then add this line into your PowerShell `$PROFILE`:
