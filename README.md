@@ -41,17 +41,12 @@ Currently, this early version only supports PowerShell 7.0 and later. If you nee
 
 ## How was it built and how does it work
 
-This module was built by exporting creating the base of the proxy command with the following script, 
+This module was built by exporting creating the base of the proxy command with the following script:
 
 ```powershell
 $metaData = New-Object System.Management.Automation.CommandMetaData(Get-Command Set-Location)
 [System.Management.Automation.ProxyCommand]::Create($metadata)
 ```
 
-This command is then wrapped in a function as `function{ }` and the following code added at the end of the `end` block of it:
-
-```powershell
-if (Test-Path (Join-Path $PWD.Path '.git')) {
-    Import-Module posh-git
-}
+This command is then wrapped in a function as `function{ }` and code added at the end of the `end` block of it to add the custom logic for importing `posh-git` if there is a `.git` folder in the current working directory.
 ```
