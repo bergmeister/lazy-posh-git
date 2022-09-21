@@ -3,7 +3,8 @@
     .ForwardHelpCategory Cmdlet
 #>
 param(
-    [string] $PoshGitSettingsScriptPath
+    [Parameter(Position = 0)]
+    [string] $PostImportScriptPath
 )
 
 function Set-Location {
@@ -85,8 +86,8 @@ function Set-Location {
         }
         if (Test-Path (Join-Path $PWD.Path '.git')) {
             Import-Module posh-git
-            if (Test-Path $PoshGitSettingsScriptPath) {
-                & $PoshGitSettingsScriptPath
+            if (Test-Path $PostImportScriptPath) {
+                & $PostImportScriptPath
             }
         }
     }
