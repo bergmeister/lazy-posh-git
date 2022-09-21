@@ -20,6 +20,20 @@ Import-Module 'lazy-posh-git'
 
 Only once you navigate to a git directory, the `posh-git` module will be imported, which is when it is needed, therefore defering the delay caused by the import to the last moment in time until we know we need it.
 
+## Using custom posh-git settings
+If there are certain posh-git settings you wish to change after posh-git is loaded, you can do so. Create a script file with the desired settings in a convenient location. Then tell lazy-posh-git where to find it, like this:
+
+```powershell
+Import-Module 'lazy-posh-git' -ArgumentList '~\path-to-my\git-prompt-settings.ps1'
+``` 
+
+Lazy-posh-git will run your script directly after it has loaded posh-git. Your posh-git settings script could look like this for example:
+
+```powershell
+$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
+$GitPromptSettings.AfterStatus.Text = "]`n"
+```
+
 ## Support
 
 Currently, this early version only supports PowerShell 7.0 and later. If you need support for PowerShell 5.1, please open an issue or open a pull request.
