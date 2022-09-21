@@ -2,6 +2,10 @@
     .ForwardHelpTargetName Microsoft.PowerShell.Management\Set-Location
     .ForwardHelpCategory Cmdlet
 #>
+param(
+    [string] $PoshGitSettingsScriptPath
+)
+
 function Set-Location {
     [CmdletBinding(DefaultParameterSetName = 'Path', HelpUri = 'https://go.microsoft.com/fwlink/?LinkID=2097049')]
     param(
@@ -81,6 +85,9 @@ function Set-Location {
         }
         if (Test-Path (Join-Path $PWD.Path '.git')) {
             Import-Module posh-git
+            if (Test-Path $PoshGitSettingsScriptPath) {
+                & $PoshGitSettingsScriptPath
+            }
         }
     }
 
