@@ -5,11 +5,21 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-# - task: CopyFiles@2
-#   inputs:
-#     SourceFolder: '$(Build.SourcesDirectory)'
-#     Contents: '**'
-#     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: CopyFiles@2
+  displayName: 'Copy source folder'
+  inputs:
+    SourceFolder: 'source'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    
+- task: CopyFiles@2
+  displayName: 'Copy LICENCE and README.MD files'
+  inputs:
+    SourceFolder: 'source'
+    Contents: |
+      LICENSE
+      README.md
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 # - task: PublishBuildArtifacts@1
 #   inputs:
@@ -19,5 +29,5 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
     publishLocation: 'pipeline'
