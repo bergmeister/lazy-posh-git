@@ -15,7 +15,6 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy LICENCE and README.MD files'
   inputs:
-    SourceFolder: 'source'
     Contents: |
       LICENSE
       README.md
