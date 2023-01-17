@@ -37,7 +37,7 @@ $GitPromptSettings.AfterStatus.Text = "]`n"
 
 ## Support
 
-Currently, this early version only supports PowerShell 7.0 and later. If you need support for PowerShell 5.1, please open an issue or open a pull request.
+This early version works for PowerShell 5.1 and 7. If you need support for older versions, please open an issue or a pull request.
 
 ## How was it built and how does it work
 
