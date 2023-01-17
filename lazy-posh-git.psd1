@@ -33,7 +33,7 @@ Copyright = '(c) Christoph Bergmeister. All rights reserved.'
 Description = 'Proxy command around Set-Location and its aliases to defer import of posh-git until one is in a git directory.'
 
 # Minimum version of the PowerShell engine required by this module
- PowerShellVersion = '7.0'
+ PowerShellVersion = '5.0'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''

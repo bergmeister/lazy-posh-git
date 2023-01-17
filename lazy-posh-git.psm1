@@ -86,7 +86,8 @@ function Set-Location {
         }
         if (Test-Path (Join-Path $PWD.Path '.git')) {
             Import-Module posh-git
-            if (Test-Path $PostImportScriptPath) {
+            # The first condition helps to prevent ParameterBindingException on PowerShell 5
+            if ($PostImportScriptPath -and $(Test-Path $PostImportScriptPath)) {
                 & $PostImportScriptPath
             }
         }
